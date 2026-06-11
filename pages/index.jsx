@@ -1239,7 +1239,7 @@ export default function Home() {
     All prices include a 30% launch discount Â· Minimum order à§³250<br />
     Free Pink Clips gift-with-purchase on orders à§³400+
   </div>
-  <div className="footer-ornament-row" style="margin-top: 2rem; margin-bottom: 0;">
+  <div className="footer-ornament-row" style={{ marginTop: '2rem', marginBottom: '0' }}>
     <div className="footer-ornament-line"></div>
     <div className="footer-ornament-dot"></div>
     <div className="footer-ornament-line"></div>
