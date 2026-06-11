@@ -38,7 +38,7 @@ export default function Home() {
 <div className="cover">
   <div className="cover-texture"></div>
   <div className="cover-inner">
-    <div className="cover-pre">Launch Edition Â· 2026</div>
+    <div className="cover-pre">Launch Edition · 2026</div>
     <div className="cover-ornament-row">
       <div className="cover-ornament-line"></div>
       <div className="cover-ornament-diamond"></div>
@@ -51,11 +51,11 @@ export default function Home() {
       <div className="cover-ornament-diamond"></div>
       <div className="cover-ornament-line"></div>
     </div>
-    <div className="cover-subtitle">Product Catalog &nbsp;Â·&nbsp; Curated Mystery Â· Dhaka</div>
+    <div className="cover-subtitle">Product Catalog  ·  Curated Mystery · Dhaka</div>
     <div className="cover-categories">
       <span className="cover-cat-item">Mystery</span>
       <span className="cover-cat-item">Jewelry</span>
-      <span className="cover-cat-item">Hair &amp; Bindis</span>
+      <span className="cover-cat-item">Hair & Bindis</span>
       <span className="cover-cat-item">Character</span>
       <span className="cover-cat-item">Stationery</span>
     </div>
@@ -72,7 +72,7 @@ export default function Home() {
   <div className="nav-links">
     <a className="nav-link" href="#mystery">Mystery <span className="nav-count">2</span></a>
     <a className="nav-link" href="#jewelry">Jewelry <span className="nav-count">12</span></a>
-    <a className="nav-link" href="#hair-bindis">Hair &amp; Bindis <span className="nav-count">4</span></a>
+    <a className="nav-link" href="#hair-bindis">Hair & Bindis <span className="nav-count">4</span></a>
     <a className="nav-link" href="#character">Character <span className="nav-count">8</span></a>
     <a className="nav-link" href="#stationery">Stationery <span className="nav-count">12</span></a>
   </div>
@@ -91,7 +91,7 @@ export default function Home() {
     </div>
     <div className="section-meta">
       <span className="section-meta-dot"></span>
-      2 ways in &nbsp;Â·&nbsp; The Scoop, The Package
+      2 ways in  ·  The Scoop, The Package
     </div>
   </div>
 
@@ -239,7 +239,7 @@ export default function Home() {
     </div>
     <div className="section-meta">
       <span className="section-meta-dot"></span>
-      12 products &nbsp;Â·&nbsp; Rings, Earrings, Bracelets, Pendants
+      12 products  ·  Rings, Earrings, Bracelets, Pendants
     </div>
   </div>
 
@@ -567,7 +567,7 @@ export default function Home() {
     </div>
     <div className="section-meta">
       <span className="section-meta-dot"></span>
-      4 products &nbsp;Â·&nbsp; Bindis, Clips
+      4 products  ·  Bindis, Clips
     </div>
   </div>
 
@@ -685,7 +685,7 @@ export default function Home() {
     </div>
     <div className="section-meta">
       <span className="section-meta-dot"></span>
-      8 products &nbsp;Â·&nbsp; Key Rings, Charms, Bags
+      8 products  ·  Key Rings, Charms, Bags
     </div>
   </div>
 
@@ -1244,7 +1244,7 @@ export default function Home() {
     <div className="footer-ornament-dot"></div>
     <div className="footer-ornament-line"></div>
   </div>
-  <div className="footer-bottom">Curated Mystery Â· Dhaka Â· 2026</div>
+  <div className="footer-bottom">Curated Mystery · Dhaka · 2026</div>
 </footer>
 
 
