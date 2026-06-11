@@ -1250,7 +1250,7 @@ export default function Home() {
 
 
       </main>
-      <style jsx global>{
+      <style jsx global>{`
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -1963,7 +1963,7 @@ body {
   .product-grid { grid-template-columns: 1fr; }
 }
 
-      }</style>
+      `}</style>
     </>
   );
 }
