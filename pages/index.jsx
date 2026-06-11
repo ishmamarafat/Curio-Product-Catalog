@@ -28,6 +28,7 @@ export default function Home() {
         <title>CURIO {'রহস্য'} — Product Catalog</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Explore CURIO রহস্য — A curated mystery catalog featuring jewelry, stationery, and character-themed items in Dhaka." />
         <link rel="icon" href="/favicon.png" />
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
       </Head>
@@ -100,7 +101,7 @@ export default function Home() {
     {/* The Scoop */}
     <div className="product-card">
       <div className="img-single">
-        <Image src="/scoop.jpg" alt="The Scoop" fill className="object-cover" />
+        <Image src="/scoop.jpg" alt="The Scoop" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover" />
       </div>
       <div className="product-info">
         <div className="product-cat-tag">Mystery · Scoops</div>
@@ -163,7 +164,7 @@ export default function Home() {
     {/* The Package */}
     <div className="product-card">
       <div className="img-single">
-        <Image src="/package.jpg" alt="The Package" fill className="object-cover" />
+        <Image src="/package.jpg" alt="The Package" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover" />
       </div>
       <div className="product-info">
         <div className="product-cat-tag">Mystery · Packages</div>
@@ -250,8 +251,8 @@ export default function Home() {
       <div className="img-multi">
         <div className="variant-pill">2 types</div>
         <div className="img-multi-grid g2">
-          <div className="img-slot"><Image src="/chunky-ring-type-1.jpg" alt="Chunky Rings variant 1" fill className="object-cover" /><div className="img-slot-num">01</div><div className="img-slot-sub">Variant</div></div>
-          <div className="img-slot"><Image src="/chunky-ring-type-2.jpg" alt="Chunky Rings variant 2" fill className="object-cover" /><div className="img-slot-num">02</div><div className="img-slot-sub">Variant</div></div>
+          <div className="img-slot"><Image src="/chunky-ring-type-1.jpg" alt="Chunky Rings variant 1" fill sizes="(max-width: 640px) 50vw, 15vw" className="object-cover" /><div className="img-slot-num">01</div><div className="img-slot-sub">Variant</div></div>
+          <div className="img-slot"><Image src="/chunky-ring-type-2.jpg" alt="Chunky Rings variant 2" fill sizes="(max-width: 640px) 50vw, 15vw" className="object-cover" /><div className="img-slot-num">02</div><div className="img-slot-sub">Variant</div></div>
         </div>
       </div>
       <div className="product-info">
