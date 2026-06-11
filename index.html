@@ -1,0 +1,1956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CURIO রহস্য — Product Catalog</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment: #FFF9D4;
+  --parchment-mid: #F5EDB5;
+  --ochre: #EAB26B;
+  --bark: #442319;
+  --bark-60: rgba(68,35,25,0.6);
+  --bark-30: rgba(68,35,25,0.3);
+  --bark-12: rgba(68,35,25,0.12);
+  --bark-06: rgba(68,35,25,0.06);
+  --garnet: #6E0000;
+  --garnet-soft: rgba(110,0,0,0.08);
+  --terracotta: #C36F43;
+  --card-bg: #FFFDF0;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--parchment);
+  color: var(--bark);
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── COVER ─── */
+.cover {
+  background: var(--garnet);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem 5rem;
+  position: relative;
+  overflow: hidden;
+}
+.cover-texture {
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(234,178,107,0.025) 60px, rgba(234,178,107,0.025) 61px),
+    repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(234,178,107,0.025) 60px, rgba(234,178,107,0.025) 61px);
+}
+.cover-inner { position: relative; z-index: 1; max-width: 700px; padding-bottom: 2rem; }
+
+.cover-pre {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: rgba(234,178,107,0.6);
+  margin-bottom: 3rem;
+}
+.cover-ornament-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.cover-ornament-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(234,178,107,0.4), transparent);
+}
+.cover-ornament-diamond {
+  width: 6px;
+  height: 6px;
+  background: var(--ochre);
+  transform: rotate(45deg);
+  opacity: 0.6;
+}
+
+.cover-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(80px, 16vw, 130px);
+  font-weight: 700;
+  color: var(--parchment);
+  letter-spacing: 0.15em;
+  line-height: 0.95;
+  margin-bottom: 0.6rem;
+}
+.cover-bangla {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(30px, 6vw, 52px);
+  color: var(--ochre);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  margin-bottom: 2.5rem;
+}
+.cover-ornament-row-b {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.cover-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: rgba(255,249,212,0.5);
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+.cover-categories {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: nowrap;
+}
+.cover-cat-item {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  color: rgba(255,249,212,0.45);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0 1.2rem;
+  border-right: 1px solid rgba(234,178,107,0.2);
+}
+.cover-cat-item:last-child { border-right: none; }
+
+.cover-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.cover-scroll-text {
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255,249,212,0.25);
+  font-family: 'DM Sans', sans-serif;
+}
+.cover-scroll-line {
+  width: 1px;
+  height: 32px;
+  background: linear-gradient(to bottom, rgba(234,178,107,0.4), transparent);
+}
+
+/* ─── NAV ─── */
+.catalog-nav {
+  background: var(--bark);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  display: flex;
+  align-items: stretch;
+  overflow-x: auto;
+  scrollbar-width: none;
+  border-bottom: 1px solid rgba(110,0,0,0.6);
+}
+.catalog-nav::-webkit-scrollbar { display: none; }
+
+.nav-brand {
+  font-family: 'Playfair Display', serif;
+  color: var(--parchment);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  padding: 0 2rem;
+  white-space: nowrap;
+  border-right: 1px solid rgba(255,249,212,0.08);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.nav-brand-bangla {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  color: var(--ochre);
+  font-weight: 400;
+  opacity: 0.7;
+}
+.nav-links {
+  display: flex;
+  align-items: stretch;
+  flex: 1;
+}
+.nav-link {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,249,212,0.45);
+  padding: 0 1.4rem;
+  text-decoration: none;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.nav-link:hover { color: rgba(255,249,212,0.8); }
+.nav-link.active { color: var(--ochre); border-bottom-color: var(--ochre); }
+
+.nav-count {
+  margin-left: 6px;
+  font-size: 9px;
+  background: rgba(234,178,107,0.15);
+  color: rgba(234,178,107,0.6);
+  padding: 1px 5px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+/* ─── SECTION ─── */
+.catalog-section {
+  padding: 5rem 0 6rem;
+}
+.catalog-section.tinted {
+  background: rgba(68,35,25,0.035);
+}
+
+.section-header {
+  max-width: 1280px;
+  margin: 0 auto 3.5rem;
+  padding: 0 2.5rem;
+}
+.section-header-top {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+.section-title-wrap { text-align: center; white-space: nowrap; }
+.section-rule { flex: 1; height: 1px; background: var(--ochre); opacity: 0.25; }
+.section-eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 6px;
+  opacity: 0.9;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(34px, 5vw, 52px);
+  font-weight: 700;
+  color: var(--bark);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.section-meta {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: var(--bark-60);
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.section-meta-dot {
+  width: 3px;
+  height: 3px;
+  background: var(--ochre);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* ─── PRODUCT GRID ─── */
+.product-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.75rem;
+}
+
+/* ─── PRODUCT CARD ─── */
+.product-card {
+  background: var(--card-bg);
+  border: 1px solid var(--bark-12);
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(68,35,25,0.1), 0 4px 12px rgba(110,0,0,0.08);
+}
+
+/* ─── IMAGE ZONES ─── */
+
+/* single 1:1 image */
+.img-single {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--parchment-mid);
+  border-bottom: 1px solid var(--bark-06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.img-ph-icon {
+  width: 36px;
+  height: 36px;
+  opacity: 0.18;
+}
+.img-ph-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--bark);
+  opacity: 0.35;
+}
+.img-single img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.img-slot img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.img-slot > *:not(img) {
+  position: relative;
+  z-index: 1;
+}
+
+.img-lifestyle-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--terracotta);
+  color: var(--parchment);
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  font-family: 'DM Sans', sans-serif;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 2px;
+  font-weight: 600;
+}
+
+/* multi-variant image grid */
+.img-multi {
+  width: 100%;
+  border-bottom: 1px solid var(--bark-06);
+  position: relative;
+}
+.img-multi-grid {
+  display: grid;
+  gap: 1px;
+  background: var(--bark-12);
+}
+.img-multi-grid.g2 { grid-template-columns: 1fr 1fr; }
+.img-multi-grid.g3 { grid-template-columns: 1fr 1fr 1fr; }
+.img-multi-grid.g4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+.img-slot {
+  aspect-ratio: 1 / 1;
+  background: var(--parchment-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+}
+.img-slot-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--bark);
+  opacity: 0.18;
+  line-height: 1;
+}
+.img-slot-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--bark);
+  opacity: 0.2;
+}
+
+.variant-pill {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--bark);
+  color: var(--parchment);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  border-radius: 2px;
+  z-index: 3;
+  font-weight: 500;
+}
+
+/* ─── PRODUCT INFO ─── */
+.product-info {
+  padding: 1.4rem 1.4rem 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.product-cat-tag {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  font-weight: 500;
+  margin-bottom: 0.55rem;
+}
+.product-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--bark);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+.product-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-style: italic;
+  color: var(--bark);
+  opacity: 0.65;
+  line-height: 1.45;
+  margin-bottom: 0.85rem;
+}
+.product-desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--bark-60);
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+.product-pricing {
+  display: flex;
+  align-items: flex-end;
+  gap: 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--bark-06);
+  flex-wrap: wrap;
+  row-gap: 4px;
+}
+.price-launch-block { display: flex; align-items: baseline; gap: 4px; }
+.price-currency {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--garnet);
+  line-height: 1;
+  padding-bottom: 2px;
+}
+.price-launch-amt {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--garnet);
+  line-height: 1;
+}
+.price-launch-lbl {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--garnet);
+  opacity: 0.7;
+  padding-bottom: 3px;
+  margin-left: 2px;
+}
+.price-right {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+.price-regular {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: var(--bark-30);
+  text-decoration: line-through;
+  line-height: 1;
+}
+.price-off-badge {
+  background: var(--garnet);
+  color: var(--parchment);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  padding: 3px 7px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+/* ─── MYSTERY TIER LIST ─── */
+.tier-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--bark-06);
+  padding-top: 0.25rem;
+}
+.tier-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--bark-06);
+}
+.tier-row:last-child { border-bottom: none; }
+.tier-info { min-width: 0; flex: 1; }
+.tier-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--bark);
+  line-height: 1.3;
+}
+.tier-items {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--bark-60);
+  margin-top: 2px;
+}
+.tier-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.tier-launch {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+}
+.tier-launch-amt {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--garnet);
+  line-height: 1;
+}
+.tier-regular-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.tier-regular {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: var(--bark-30);
+  text-decoration: line-through;
+  line-height: 1;
+}
+
+/* ─── GIFT NOTE ─── */
+.gift-banner {
+  max-width: 1280px;
+  margin: 0 auto 4rem;
+  padding: 0 2.5rem;
+}
+.gift-banner-inner {
+  background: var(--bark);
+  border-radius: 3px;
+  padding: 1rem 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.gift-banner-icon {
+  font-size: 18px;
+  opacity: 0.7;
+}
+.gift-banner-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: rgba(255,249,212,0.75);
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+}
+.gift-banner-text strong {
+  color: var(--ochre);
+  font-weight: 500;
+}
+
+/* ─── FOOTER ─── */
+.catalog-footer {
+  background: var(--bark);
+  padding: 4rem 2rem 3rem;
+  text-align: center;
+  border-top: 2px solid var(--garnet);
+}
+.footer-ornament-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 300px;
+  margin: 0 auto 2rem;
+}
+.footer-ornament-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(234,178,107,0.25);
+}
+.footer-ornament-dot {
+  width: 5px;
+  height: 5px;
+  background: var(--ochre);
+  border-radius: 50%;
+  opacity: 0.4;
+}
+.footer-logo-main {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--parchment);
+  letter-spacing: 0.15em;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.footer-bangla {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--ochre);
+  font-size: 22px;
+  margin-bottom: 2rem;
+  opacity: 0.85;
+}
+.footer-note {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: rgba(255,249,212,0.65);
+  line-height: 2;
+  max-width: 520px;
+  margin: 0 auto;
+}
+.footer-note span {
+  color: var(--ochre);
+  opacity: 0.9;
+}
+.footer-divider {
+  width: 1px;
+  height: 16px;
+  background: rgba(234,178,107,0.3);
+  display: inline-block;
+  margin: 0 0.75rem;
+  vertical-align: middle;
+}
+.footer-bottom {
+  margin-top: 2.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  color: rgba(255,249,212,0.3);
+  font-style: italic;
+  letter-spacing: 0.08em;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 640px) {
+  .product-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+    padding: 0 1rem;
+  }
+  .product-info { padding: 0.9rem 0.9rem 0.8rem; }
+  .product-name { font-size: 15px; }
+  .product-tagline { font-size: 13px; }
+  .product-desc { font-size: 12px; margin-bottom: 0.75rem; }
+  .price-launch-amt { font-size: 20px; }
+  .price-currency { font-size: 11px; }
+  .tier-name { font-size: 13px; }
+  .tier-items { font-size: 10px; }
+  .tier-launch-amt { font-size: 17px; }
+  .tier-row { padding: 0.65rem 0; }
+  .section-header { padding: 0 1rem; }
+  .gift-banner { padding: 0 1rem; }
+  .cover-categories { flex-wrap: wrap; gap: 0.5rem; }
+  .cover-cat-item { font-size: 12px; padding: 0 0.75rem; }
+  .img-multi-grid.g3 { grid-template-columns: 1fr 1fr 1fr; }
+  .img-multi-grid.g4 { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 400px) {
+  .product-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════ COVER ══════════════════════ -->
+<div class="cover">
+  <div class="cover-texture"></div>
+  <div class="cover-inner">
+    <div class="cover-pre">Launch Edition · 2026</div>
+    <div class="cover-ornament-row">
+      <div class="cover-ornament-line"></div>
+      <div class="cover-ornament-diamond"></div>
+      <div class="cover-ornament-line"></div>
+    </div>
+    <div class="cover-logo">CURIO</div>
+    <div class="cover-bangla">রহস্য</div>
+    <div class="cover-ornament-row cover-ornament-row-b">
+      <div class="cover-ornament-line"></div>
+      <div class="cover-ornament-diamond"></div>
+      <div class="cover-ornament-line"></div>
+    </div>
+    <div class="cover-subtitle">Product Catalog &nbsp;·&nbsp; Curated Mystery · Dhaka</div>
+    <div class="cover-categories">
+      <span class="cover-cat-item">Mystery</span>
+      <span class="cover-cat-item">Jewelry</span>
+      <span class="cover-cat-item">Hair &amp; Bindis</span>
+      <span class="cover-cat-item">Character</span>
+      <span class="cover-cat-item">Stationery</span>
+    </div>
+  </div>
+  <div class="cover-scroll">
+    <div class="cover-scroll-text">Explore</div>
+    <div class="cover-scroll-line"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════ NAV ══════════════════════ -->
+<nav class="catalog-nav" id="main-nav">
+  <div class="nav-brand">CURIO <span class="nav-brand-bangla">রহস্য</span></div>
+  <div class="nav-links">
+    <a class="nav-link" href="#mystery">Mystery <span class="nav-count">2</span></a>
+    <a class="nav-link" href="#jewelry">Jewelry <span class="nav-count">12</span></a>
+    <a class="nav-link" href="#hair-bindis">Hair &amp; Bindis <span class="nav-count">4</span></a>
+    <a class="nav-link" href="#character">Character <span class="nav-count">8</span></a>
+    <a class="nav-link" href="#stationery">Stationery <span class="nav-count">12</span></a>
+  </div>
+</nav>
+
+<!-- ══════════════════════ MYSTERY ══════════════════════ -->
+<section class="catalog-section" id="mystery">
+  <div class="section-header">
+    <div class="section-header-top">
+      <div class="section-rule"></div>
+      <div class="section-title-wrap">
+        <div class="section-eyebrow">Start Here</div>
+        <div class="section-title">Mystery</div>
+      </div>
+      <div class="section-rule"></div>
+    </div>
+    <div class="section-meta">
+      <span class="section-meta-dot"></span>
+      2 ways in &nbsp;·&nbsp; The Scoop, The Package
+    </div>
+  </div>
+
+  <div class="product-grid">
+
+    <!-- The Scoop -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Scoop.jpg" alt="The Scoop">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Mystery · Scoops</div>
+        <div class="product-name">The Scoop</div>
+        <div class="product-tagline">"Live, unscripted, all yours."</div>
+        <div class="product-desc">We film ourselves scooping items live — you watch, we pack. The mystery unfolds in real time.</div>
+        <div class="tier-list">
+          <div class="tier-row">
+            <div class="tier-info">
+              <div class="tier-name">Small Scoop</div>
+              <div class="tier-items">5–6 items</div>
+            </div>
+            <div class="tier-price">
+              <div class="tier-launch">
+                <span class="price-currency">৳</span>
+                <span class="tier-launch-amt">499</span>
+              </div>
+              <div class="tier-regular-row">
+                <span class="tier-regular">৳715</span>
+                <span class="price-off-badge">30% OFF</span>
+              </div>
+            </div>
+          </div>
+          <div class="tier-row">
+            <div class="tier-info">
+              <div class="tier-name">Classic Scoop</div>
+              <div class="tier-items">9–11 items</div>
+            </div>
+            <div class="tier-price">
+              <div class="tier-launch">
+                <span class="price-currency">৳</span>
+                <span class="tier-launch-amt">799</span>
+              </div>
+              <div class="tier-regular-row">
+                <span class="tier-regular">৳1140</span>
+                <span class="price-off-badge">30% OFF</span>
+              </div>
+            </div>
+          </div>
+          <div class="tier-row">
+            <div class="tier-info">
+              <div class="tier-name">Mega Scoop</div>
+              <div class="tier-items">15–18 items</div>
+            </div>
+            <div class="tier-price">
+              <div class="tier-launch">
+                <span class="price-currency">৳</span>
+                <span class="tier-launch-amt">1199</span>
+              </div>
+              <div class="tier-regular-row">
+                <span class="tier-regular">৳1715</span>
+                <span class="price-off-badge">30% OFF</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Package -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Package.jpg" alt="The Package">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Mystery · Packages</div>
+        <div class="product-name">The Package</div>
+        <div class="product-tagline">"Curated by us. Surprising for you."</div>
+        <div class="product-desc">We curate and pack the box our way — sealed with taste, delivered with surprise.</div>
+        <div class="tier-list">
+          <div class="tier-row">
+            <div class="tier-info">
+              <div class="tier-name">Small Package</div>
+              <div class="tier-items">5–6 items</div>
+            </div>
+            <div class="tier-price">
+              <div class="tier-launch">
+                <span class="price-currency">৳</span>
+                <span class="tier-launch-amt">499</span>
+              </div>
+              <div class="tier-regular-row">
+                <span class="tier-regular">৳715</span>
+                <span class="price-off-badge">30% OFF</span>
+              </div>
+            </div>
+          </div>
+          <div class="tier-row">
+            <div class="tier-info">
+              <div class="tier-name">Classic Package</div>
+              <div class="tier-items">9–11 items</div>
+            </div>
+            <div class="tier-price">
+              <div class="tier-launch">
+                <span class="price-currency">৳</span>
+                <span class="tier-launch-amt">799</span>
+              </div>
+              <div class="tier-regular-row">
+                <span class="tier-regular">৳1140</span>
+                <span class="price-off-badge">30% OFF</span>
+              </div>
+            </div>
+          </div>
+          <div class="tier-row">
+            <div class="tier-info">
+              <div class="tier-name">Mega Package</div>
+              <div class="tier-items">15–18 items</div>
+            </div>
+            <div class="tier-price">
+              <div class="tier-launch">
+                <span class="price-currency">৳</span>
+                <span class="tier-launch-amt">1199</span>
+              </div>
+              <div class="tier-regular-row">
+                <span class="tier-regular">৳1715</span>
+                <span class="price-off-badge">30% OFF</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /product-grid -->
+</section>
+
+<!-- ══════════════════════ JEWELRY ══════════════════════ -->
+<section class="catalog-section" id="jewelry">
+  <div class="section-header">
+    <div class="section-header-top">
+      <div class="section-rule"></div>
+      <div class="section-title-wrap">
+        <div class="section-eyebrow">Category One</div>
+        <div class="section-title">Jewelry</div>
+      </div>
+      <div class="section-rule"></div>
+    </div>
+    <div class="section-meta">
+      <span class="section-meta-dot"></span>
+      12 products &nbsp;·&nbsp; Rings, Earrings, Bracelets, Pendants
+    </div>
+  </div>
+
+  <div class="product-grid">
+
+    <!-- Chunky Rings — 2 types -->
+    <div class="product-card">
+      <div class="img-multi">
+        <div class="variant-pill">2 types</div>
+        <div class="img-multi-grid g2">
+          <div class="img-slot"><img src="Chunky ring type 1.jpg" alt="Chunky Rings variant 1"><div class="img-slot-num">01</div><div class="img-slot-sub">Variant</div></div>
+          <div class="img-slot"><img src="Chunky ring type 2.jpg" alt="Chunky Rings variant 2"><div class="img-slot-num">02</div><div class="img-slot-sub">Variant</div></div>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Jewelry · Rings</div>
+        <div class="product-name">Chunky Rings</div>
+        <div class="product-tagline">"Stack 'em. Own the aesthetic."</div>
+        <div class="product-desc">Bold, oversized, unapologetically Y2K — these chunky rings are meant to be worn three at a time. Mix metals, mix moods. One ring for every version of you.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">149</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳213</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enamel Rings — 3 types -->
+    <div class="product-card">
+      <div class="img-multi">
+        <div class="variant-pill">3 types</div>
+        <div class="img-multi-grid g3">
+          <div class="img-slot"><img src="Enamel ring type 1.jpg" alt="Enamel Rings variant 1"><div class="img-slot-num">01</div><div class="img-slot-sub">Variant</div></div>
+          <div class="img-slot"><img src="Enamel ring type 2.jpg" alt="Enamel Rings variant 2"><div class="img-slot-num">02</div><div class="img-slot-sub">Variant</div></div>
+          <div class="img-slot"><img src="Enamel ring type 3.jpg" alt="Enamel Rings variant 3"><div class="img-slot-num">03</div><div class="img-slot-sub">Variant</div></div>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Jewelry · Rings</div>
+        <div class="product-name">Enamel Rings</div>
+        <div class="product-tagline">"Tiny art. Worn on your finger."</div>
+        <div class="product-desc">Colourful enamel detailing on a dainty band. Cute enough for school, cool enough for wherever the night takes you. Collect one in every shade.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">169</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳241</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bracelet 4pc -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Bracelet 4 pc set.jpg" alt="Bracelet 4pc Packet">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Jewelry · Bracelets</div>
+        <div class="product-name">Bracelet (4pc Packet)</div>
+        <div class="product-tagline">"Four bracelets. One wrist. Infinite combinations."</div>
+        <div class="product-desc">A curated set of four stackable bracelets — because one is never enough. Layer them together or mix with your own favourites. The perfect wrist stack starts here.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">299</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳427</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Water Droplet Earrings -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Water droplets earrings.jpg" alt="Water Droplet Earrings">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Jewelry · Earrings</div>
+        <div class="product-name">Water Droplet Earrings</div>
+        <div class="product-tagline">"Light. Airy. Effortlessly you."</div>
+        <div class="product-desc">Delicate water droplet silhouettes that catch the light with every turn of your head. The kind of earrings you forget you're wearing — until someone asks about them.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">149</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳213</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pearl Stud Earrings -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Pearl stud earrings.jpg" alt="Pearl Stud Earrings">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Jewelry · Earrings</div>
+        <div class="product-name">Pearl Stud Earrings</div>
+        <div class="product-tagline">"Old money energy. New girl attitude."</div>
+        <div class="product-desc">Classic pearl studs reimagined for Gen Z. Minimal, timeless, and just the right amount of put-together. Works with your school uniform and your going-out fit.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">199</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳284</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cherry Earrings -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Cherry earrings.jpg" alt="Cherry Earrings">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Jewelry · Earrings</div>
+        <div class="product-name">Cherry Earrings</div>
+        <div class="product-tagline">"Sweet. Playful. Totally iconic."</div>
+        <div class="product-desc">Cherry dangles that scream summer Y2K. These tiny statement earrings are the punctuation mark your outfit was missing. Playful without trying — that's the vibe.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">149</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳213</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pearl Earrings -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Pearl earrings.jpg" alt="Pearl Earrings">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Jewelry · Earrings</div>
+        <div class="product-name">Pearl Earrings</div>
+        <div class="product-tagline">"Pearls, but make it interesting."</div>
+        <div class="product-desc">Not your grandmother's pearls. These have character — whether they dangle, cluster, or drop, they bring a quiet confidence that does all the talking for you.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">249</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳356</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Helix Earrings -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Helix earrings.jpg" alt="Helix Earrings">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Jewelry · Earrings</div>
+        <div class="product-name">Helix Earrings</div>
+        <div class="product-tagline">"Designed for the girl who collects earrings."</div>
+        <div class="product-desc">Slim, spiral, subtly stunning. Made for stacking up the ear or wearing solo for a clean, editorial look. Minimal effort. Maximum cool.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">199</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳284</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Moyur Earrings -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Moyur Earrings.jpg" alt="Moyur Earrings">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Jewelry · Earrings</div>
+        <div class="product-name">Moyur Earrings</div>
+        <div class="product-tagline">"Inspired by the peacock. Worn by you."</div>
+        <div class="product-desc">Taking the shimmering beauty of the moyur and distilling it into wearable art. Intricate details, iridescent charm — at every celebration and every casual Tuesday.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">249</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳356</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Jhumka -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Jhumka.jpg" alt="Jhumka">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Jewelry · Earrings</div>
+        <div class="product-name">Jhumka</div>
+        <div class="product-tagline">"Your deshi roots. Your Y2K moment."</div>
+        <div class="product-desc">Bangladesh's most beloved earring gets a CURIO refresh. Traditional bell shape, contemporary finish. Wear it to Eid, to a hangout, to wherever you want to feel rooted and radiant.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">219</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳313</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mini Jhumka -->
+    <div class="product-card">
+      <div class="img-multi">
+        <div class="variant-pill">3 types</div>
+        <div class="img-multi-grid g3">
+          <div class="img-slot"><img src="mini jhumka type 1.jpg" alt="Mini Jhumka type 1"><div class="img-slot-num">01</div><div class="img-slot-sub">Variant</div></div>
+          <div class="img-slot"><img src="mini jhumka type 2.jpg" alt="Mini Jhumka type 2"><div class="img-slot-num">02</div><div class="img-slot-sub">Variant</div></div>
+          <div class="img-slot"><img src="mini jhumka type 3.jpg" alt="Mini Jhumka type 3"><div class="img-slot-num">03</div><div class="img-slot-sub">Variant</div></div>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Jewelry · Earrings</div>
+        <div class="product-name">Mini Jhumka</div>
+        <div class="product-tagline">"All the culture. Half the size."</div>
+        <div class="product-desc">A petite version of the beloved jhumka — small enough for everyday wear, significant enough to carry a heritage. That gentle, familiar jingle, always with you.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">129</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳184</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pendants — 2 types -->
+    <div class="product-card">
+      <div class="img-multi">
+        <div class="variant-pill">2 types</div>
+        <div class="img-multi-grid g2">
+          <div class="img-slot"><img src="Pendant type 1.jpg" alt="Pendant type 1"><div class="img-slot-num">01</div><div class="img-slot-sub">Variant</div></div>
+          <div class="img-slot"><img src="Pendant type 2.jpg" alt="Pendant type 2"><div class="img-slot-num">02</div><div class="img-slot-sub">Variant</div></div>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Jewelry · Pendants</div>
+        <div class="product-name">Pendants</div>
+        <div class="product-tagline">"A little mystery. Right at your heart."</div>
+        <div class="product-desc">Delicate pendant designs that sit close to the heart — literally. Each piece carries its own quiet story. Wear alone or layer with other necklaces for a curated, lived-in look.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">179</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳256</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /product-grid -->
+</section>
+
+<!-- ══════════════════════ HAIR & BINDIS ══════════════════════ -->
+<section class="catalog-section tinted" id="hair-bindis">
+  <div class="section-header">
+    <div class="section-header-top">
+      <div class="section-rule"></div>
+      <div class="section-title-wrap">
+        <div class="section-eyebrow">Category Two</div>
+        <div class="section-title">Hair &amp; Bindis</div>
+      </div>
+      <div class="section-rule"></div>
+    </div>
+    <div class="section-meta">
+      <span class="section-meta-dot"></span>
+      4 products &nbsp;·&nbsp; Bindis, Clips
+    </div>
+  </div>
+
+  <div class="product-grid">
+
+    <!-- Chaad Tip -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Chand tip.jpg" alt="Chaad Tip (Sheet)">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Hair &amp; Bindis</div>
+        <div class="product-name">Chaad Tip (Sheet)</div>
+        <div class="product-tagline">"Wear the moon on your forehead."</div>
+        <div class="product-desc">A full sheet of crescent moon-shaped tips — the classic chaad tip, beloved for generations. For Eid, for a photoshoot, or just because you felt like it today.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">49</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳70</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stone Tip -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Stone tip.jpg" alt="Stone Tip (Sheet)">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Hair &amp; Bindis</div>
+        <div class="product-name">Stone Tip (Sheet)</div>
+        <div class="product-tagline">"A sparkle. Right between your brows."</div>
+        <div class="product-desc">A whole sheet of gem-studded tips in assorted shapes and colours. One sheet. Endless looks. The finishing touch your beauty routine didn't know it needed.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">49</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳70</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Claw Clips -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Claw Clips.jpg" alt="Claw Clips">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Hair &amp; Bindis</div>
+        <div class="product-name">Claw Clips</div>
+        <div class="product-tagline">"Hair up. Confidence on."</div>
+        <div class="product-desc">The claw clip is back — and it never really left. A reliable, stylish grip for every kind of hair. Messy bun, half-up, full twist — this little clip does the heavy lifting.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">99</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳141</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Clips -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Clips.jpg" alt="Clips">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Hair &amp; Bindis</div>
+        <div class="product-name">Clips</div>
+        <div class="product-tagline">"Small clips. Big statement."</div>
+        <div class="product-desc">Decorative hair clips that add that extra something to any style. Scatter a few across a low bun or line them up the side for that effortlessly curated hair moment.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">79</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳113</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /product-grid -->
+</section>
+
+<!-- ══════════════════════ CHARACTER ══════════════════════ -->
+<section class="catalog-section" id="character">
+  <div class="section-header">
+    <div class="section-header-top">
+      <div class="section-rule"></div>
+      <div class="section-title-wrap">
+        <div class="section-eyebrow">Category Three</div>
+        <div class="section-title">Character</div>
+      </div>
+      <div class="section-rule"></div>
+    </div>
+    <div class="section-meta">
+      <span class="section-meta-dot"></span>
+      8 products &nbsp;·&nbsp; Key Rings, Charms, Bags
+    </div>
+  </div>
+
+  <div class="product-grid">
+
+    <!-- Kuromi Key Ring -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="key ring kuromi.png.jpg" alt="Kuromi Key Ring">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Character · Key Rings</div>
+        <div class="product-name">Kuromi Key Ring</div>
+        <div class="product-tagline">"Dark, cute, and kind of iconic."</div>
+        <div class="product-desc">Kuromi — Sanrio's rebellious bad girl — now dangling from your bag or keys. A little edgy, a lot adorable. For the girl who knows the rule-breaker is always the best character.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">199</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳284</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tumbler Key Ring -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Key ring tumbler.jpg" alt="Tumbler Key Ring">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Character · Key Rings</div>
+        <div class="product-name">Tumbler Key Ring</div>
+        <div class="product-tagline">"For the girl who never puts down her cup."</div>
+        <div class="product-desc">A miniature tumbler charm — because your obsession with aesthetic drinkware deserves to come with you everywhere. Clip it on, show it off.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">199</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳284</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pink Bow Key Ring -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Key ring pink bow.jpg" alt="Pink Bow Key Ring">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Character · Key Rings</div>
+        <div class="product-name">Pink Bow Key Ring</div>
+        <div class="product-tagline">"Coquette energy. Always."</div>
+        <div class="product-desc">A soft, pink satin bow — the unofficial symbol of the coquette aesthetic — now in key ring form. Feminine, playful, and a little flirty. Add to your bag and let the vibes speak.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">99</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳141</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Car Key Ring -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="key ring cars.jpg" alt="Car Key Ring">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Character · Key Rings</div>
+        <div class="product-name">Car Key Ring</div>
+        <div class="product-tagline">"For the girl who moves on her own terms."</div>
+        <div class="product-desc">A sleek mini car charm that says 'I go where I want.' Whether you drive or just dream about it, this key ring is for the girl with places to be.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">129</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳184</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Crystal Key Ring -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Key ring crystal.jpg" alt="Crystal Key Ring">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Character · Key Rings</div>
+        <div class="product-name">Crystal Key Ring</div>
+        <div class="product-tagline">"A little mystical. A lot beautiful."</div>
+        <div class="product-desc">Faceted crystal charms in astronaut design that catch light like magic. Hang these off your bag for that effortless maximalist look — like you've been collecting pretty things your whole life.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">199</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳284</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hello Kitty Key Ring -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Key ring hello kitty.jpg" alt="Hello Kitty Key Ring">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Character · Key Rings</div>
+        <div class="product-name">Hello Kitty Key Ring</div>
+        <div class="product-tagline">"A classic. Forever."</div>
+        <div class="product-desc">Hello Kitty needs no introduction. This key ring is for the girl who grew up loving her and never stopped. Nostalgia, cuteness, and a bow — all in one.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">199</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳284</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pouch Bag -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Pouch bag.jpg" alt="Pouch Bag">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Character · Bags</div>
+        <div class="product-name">Pouch Bag</div>
+        <div class="product-tagline">"Tiny bag. Big personality."</div>
+        <div class="product-desc">A character-printed pouch that's equal parts practical and adorable. Toss in your lip balm, your earphones, your secrets. Small enough to slip in your bag, cute enough to carry alone.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">249</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳356</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phone Charms -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Phone charms.jpg" alt="Phone Charms">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Character · Charms</div>
+        <div class="product-name">Phone Charms</div>
+        <div class="product-tagline">"Your phone. But make it cute."</div>
+        <div class="product-desc">Phone charms are back, and they're better than ever. Hang a character charm off your case and instantly transform a boring device into a personalised accessory. Y2K approved.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">229</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳327</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /product-grid -->
+</section>
+
+<!-- ══════════════════════ STATIONERY ══════════════════════ -->
+<section class="catalog-section tinted" id="stationery">
+  <div class="section-header">
+    <div class="section-header-top">
+      <div class="section-rule"></div>
+      <div class="section-title-wrap">
+        <div class="section-eyebrow">Category Four</div>
+        <div class="section-title">Stationery</div>
+      </div>
+      <div class="section-rule"></div>
+    </div>
+    <div class="section-meta">
+      <span class="section-meta-dot"></span>
+      12 products &nbsp;·&nbsp; Writing, Stickers, Lifestyle
+    </div>
+  </div>
+
+  <div class="product-grid">
+
+    <!-- Dollar Pencil -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Dollar Mechanical Pencil.jpg" alt="Dollar Pencil">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Stationery · Writing</div>
+        <div class="product-name">Dollar Pencil</div>
+        <div class="product-tagline">"Write rich."</div>
+        <div class="product-desc">A novelty dollar-bill pencil that brings a little humour and a lot of style to your pencil case. Why settle for boring when you can write with something that makes people smile?</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">99</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳141</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fountain Pen -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Fountain Pen.png" alt="Fountain Pen">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Stationery · Writing</div>
+        <div class="product-name">Fountain Pen</div>
+        <div class="product-tagline">"Old soul. New notes."</div>
+        <div class="product-desc">The weight of it in your hand, the flow of the ink — it makes every note feel intentional. For the girl who takes her journaling seriously.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">129</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳184</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stationery Set -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Stationary set.jpg" alt="Stationery Set">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Stationery · Sets</div>
+        <div class="product-name">Stationery Set</div>
+        <div class="product-tagline">"Everything you need. All in one."</div>
+        <div class="product-desc">A curated collection of stationery essentials — your study desk deserves to look as good as your Instagram feed. One set to organise, create, and make every study session feel a little more you.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">220</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳314</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sharpener -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Sharpener.jpg" alt="Sharpener">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Stationery · Writing</div>
+        <div class="product-name">Sharpener</div>
+        <div class="product-tagline">"Sharp pencils. Sharper mind."</div>
+        <div class="product-desc">Not just a sharpener — it's a whole aesthetic moment. Compact, cute, and functional. The kind of thing that lives permanently in your pencil case and gets complimented every time it comes out.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">99</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳141</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kuromi Notebook -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Notebook kuromi.jpg" alt="Kuromi Notebook">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Stationery · Notebooks</div>
+        <div class="product-name">Kuromi Notebook</div>
+        <div class="product-tagline">"Dark thoughts deserve a dark journal."</div>
+        <div class="product-desc">Kuromi on the cover, blank pages inside — ready for your biggest feelings and brightest ideas. Whether you're journaling, doodling, or writing lists, this notebook makes it feel like a moment.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">199</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳284</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Highlighter — 4 types -->
+    <div class="product-card">
+      <div class="img-multi">
+        <div class="variant-pill">4 types</div>
+        <div class="img-multi-grid g4">
+          <div class="img-slot"><img src="Highlighter type 1.jpg" alt="Highlighter type 1"><div class="img-slot-num">01</div><div class="img-slot-sub">Colour</div></div>
+          <div class="img-slot"><img src="Highlighter type 2.jpg" alt="Highlighter type 2"><div class="img-slot-num">02</div><div class="img-slot-sub">Colour</div></div>
+          <div class="img-slot"><img src="Highlighter type 3.jpg" alt="Highlighter type 3"><div class="img-slot-num">03</div><div class="img-slot-sub">Colour</div></div>
+          <div class="img-slot"><img src="Highlighter type 4.jpg" alt="Highlighter type 4"><div class="img-slot-num">04</div><div class="img-slot-sub">Colour</div></div>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Stationery · Writing</div>
+        <div class="product-name">Highlighter</div>
+        <div class="product-tagline">"Highlight the important stuff."</div>
+        <div class="product-desc">A smooth, vibrant highlighter that makes your notes pop. Study sessions are better with colour — and this one delivers a clean, bright line every single time.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">39</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳56</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kuromi Stickers -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Sticker Kuromi.jpg" alt="Kuromi Stickers">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Stationery · Stickers</div>
+        <div class="product-name">Kuromi Stickers</div>
+        <div class="product-tagline">"Sticker your whole world in Kuromi."</div>
+        <div class="product-desc">A sheet of Kuromi stickers for your notebook, your laptop, your water bottle, your entire life. Because everything is better with a little gothic-cute energy on top.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">99</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳141</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3D Stickers -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Sticker 3d.jpg" alt="3D Stickers">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Stationery · Stickers</div>
+        <div class="product-name">3D Stickers</div>
+        <div class="product-tagline">"Stickers with depth. Literally."</div>
+        <div class="product-desc">Puffy, textured, three-dimensional stickers that add serious personality to anything they touch. Your planner, your diary, your best friend's birthday card — all deserve this treatment.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">99</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳141</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Normal Stickers -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Sticker normal.jpg" alt="Normal Stickers">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Stationery · Stickers</div>
+        <div class="product-name">Normal Stickers</div>
+        <div class="product-tagline">"Stick to what you love."</div>
+        <div class="product-desc">A mix of cute, aesthetic, and just-right stickers for everyday use. Decorate everything. Personalise everything. Life is too short for blank surfaces.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">65</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳93</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Labubu Stickers -->
+    <div class="product-card">
+      <div class="img-single">
+        <img src="Sticker Labubu.jpg" alt="Labubu Stickers">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Stationery · Stickers</div>
+        <div class="product-name">Labubu Stickers</div>
+        <div class="product-tagline">"The mischievous little one. Now in sticker form."</div>
+        <div class="product-desc">Labubu — the quirky, pointy-eared character everyone is obsessed with — now as a sticker sheet. Stick them everywhere and confuse everyone who hasn't discovered him yet.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">129</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳184</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Straws per unit — lifestyle -->
+    <div class="product-card">
+      <div class="img-single">
+        <div class="img-lifestyle-tag">Lifestyle</div>
+        <img src="Straw.jpg" alt="Straws per unit">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Lifestyle</div>
+        <div class="product-name">Straws (per unit)</div>
+        <div class="product-tagline">"Drink cute."</div>
+        <div class="product-desc">A single decorative reusable straw that turns any drink into an aesthetic moment. Add it to your tumbler, your cha, your juice — and watch the whole vibe of your drink change.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">40</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳57</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Straws 4pc — lifestyle -->
+    <div class="product-card">
+      <div class="img-single">
+        <div class="img-lifestyle-tag">Lifestyle</div>
+        <img src="Straws 4 pc set.jpg" alt="Straws 4pc Packet">
+      </div>
+      <div class="product-info">
+        <div class="product-cat-tag">Lifestyle</div>
+        <div class="product-name">Straws (4pc Packet)</div>
+        <div class="product-tagline">"Four straws. Four moods."</div>
+        <div class="product-desc">A set of four decorative straws to match every drink, every day, every outfit. Keep a set at home, keep one in your bag, give one to your best friend. Drinking in style is a team sport.</div>
+        <div class="product-pricing">
+          <div class="price-launch-block">
+            <span class="price-currency">৳</span>
+            <span class="price-launch-amt">120</span>
+            <span class="price-launch-lbl">Launch</span>
+          </div>
+          <div class="price-right">
+            <span class="price-regular">৳171</span>
+            <span class="price-off-badge">30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /product-grid -->
+
+  <!-- GIFT NOTE BANNER -->
+  <div class="gift-banner" style="margin-top: 3.5rem;">
+    <div class="gift-banner-inner">
+      <span class="gift-banner-icon">✦</span>
+      <div class="gift-banner-text">
+        <strong>Free Gift on Orders ৳400+</strong> — Pink Clips included automatically with every qualifying order.
+        &nbsp;&nbsp;<strong>Minimum order:</strong> ৳250 &nbsp;·&nbsp; <strong>All launch prices</strong> reflect a 30% introductory discount.
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ══════════════════════ FOOTER ══════════════════════ -->
+<footer class="catalog-footer">
+  <div class="footer-ornament-row">
+    <div class="footer-ornament-line"></div>
+    <div class="footer-ornament-dot"></div>
+    <div class="footer-ornament-line"></div>
+  </div>
+  <div class="footer-logo-main">CURIO</div>
+  <div class="footer-bangla">রহস্য</div>
+  <div class="footer-note">
+    <span>Mystery</span>
+    <span class="footer-divider"></span>
+    <span>Jewelry</span>
+    <span class="footer-divider"></span>
+    <span>Hair &amp; Bindis</span>
+    <span class="footer-divider"></span>
+    <span>Character</span>
+    <span class="footer-divider"></span>
+    <span>Stationery</span>
+    <br><br>
+    All prices include a 30% launch discount · Minimum order ৳250<br>
+    Free Pink Clips gift-with-purchase on orders ৳400+
+  </div>
+  <div class="footer-ornament-row" style="margin-top: 2rem; margin-bottom: 0;">
+    <div class="footer-ornament-line"></div>
+    <div class="footer-ornament-dot"></div>
+    <div class="footer-ornament-line"></div>
+  </div>
+  <div class="footer-bottom">Curated Mystery · Dhaka · 2026</div>
+</footer>
+
+<script>
+(function() {
+  const links = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('section.catalog-section');
+  if (!sections.length) return;
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const target = document.querySelector('.nav-link[href="#' + entry.target.id + '"]');
+        if (target) target.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+
+  sections.forEach(s => io.observe(s));
+})();
+</script>
+</body>
+</html>
