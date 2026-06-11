@@ -25,8 +25,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>CURIO রহস্য — Product Catalog</title>
-        <meta charSet="UTF-8" />
+        <title>CURIO {'রহস্য'} — Product Catalog</title>
+        <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.png" />
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
@@ -34,24 +34,24 @@ export default function Home() {
       <main>
         
 
-{/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• COVER â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+{/* ====================== COVER ====================== */}
 <div className="cover">
   <div className="cover-texture"></div>
   <div className="cover-inner">
-    <div className="cover-pre">Launch Edition Â· 2026</div>
+    <div className="cover-pre">Launch Edition · 2026</div>
     <div className="cover-ornament-row">
       <div className="cover-ornament-line"></div>
       <div className="cover-ornament-diamond"></div>
       <div className="cover-ornament-line"></div>
     </div>
     <div className="cover-logo">CURIO</div>
-    <div className="cover-bangla">à¦°à¦¹à¦¸à§à¦¯</div>
+    <div className="cover-bangla">{'রহস্য'}</div>
     <div className="cover-ornament-row cover-ornament-row-b">
       <div className="cover-ornament-line"></div>
       <div className="cover-ornament-diamond"></div>
       <div className="cover-ornament-line"></div>
     </div>
-    <div className="cover-subtitle">Product Catalog &nbsp;Â·&nbsp; Curated Mystery Â· Dhaka</div>
+    <div className="cover-subtitle">Product Catalog &nbsp;·&nbsp; Curated Mystery · Dhaka</div>
     <div className="cover-categories">
       <span className="cover-cat-item">Mystery</span>
       <span className="cover-cat-item">Jewelry</span>
@@ -66,9 +66,9 @@ export default function Home() {
   </div>
 </div>
 
-{/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• NAV â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+{/* ====================== NAV ====================== */}
 <nav className="catalog-nav" id="main-nav">
-  <div className="nav-brand">CURIO <span className="nav-brand-bangla">à¦°à¦¹à¦¸à§à¦¯</span></div>
+  <div className="nav-brand">CURIO <span className="nav-brand-bangla">{'রহস্য'}</span></div>
   <div className="nav-links">
     <a className="nav-link" href="#mystery">Mystery <span className="nav-count">2</span></a>
     <a className="nav-link" href="#jewelry">Jewelry <span className="nav-count">12</span></a>
@@ -78,7 +78,7 @@ export default function Home() {
   </div>
 </nav>
 
-{/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• MYSTERY â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+{/* ====================== MYSTERY ====================== */}
 <section className="catalog-section" id="mystery">
   <div className="section-header">
     <div className="section-header-top">
@@ -91,7 +91,7 @@ export default function Home() {
     </div>
     <div className="section-meta">
       <span className="section-meta-dot"></span>
-      2 ways in &nbsp;Â·&nbsp; The Scoop, The Package
+      2 ways in &nbsp;·&nbsp; The Scoop, The Package
     </div>
   </div>
 
@@ -103,23 +103,23 @@ export default function Home() {
         <Image src="/scoop.jpg" alt="The Scoop" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Mystery Â· Scoops</div>
+        <div className="product-cat-tag">Mystery · Scoops</div>
         <div className="product-name">The Scoop</div>
         <div className="product-tagline">"Live, unscripted, all yours."</div>
-        <div className="product-desc">We film ourselves scooping items live â€” you watch, we pack. The mystery unfolds in real time.</div>
+        <div className="product-desc">We film ourselves scooping items live — you watch, we pack. The mystery unfolds in real time.</div>
         <div className="tier-list">
           <div className="tier-row">
             <div className="tier-info">
               <div className="tier-name">Small Scoop</div>
-              <div className="tier-items">5â€“6 items</div>
+              <div className="tier-items">5–6 items</div>
             </div>
             <div className="tier-price">
               <div className="tier-launch">
-                <span className="price-currency">à§³</span>
+                <span className="price-currency">{'৳'}</span>
                 <span className="tier-launch-amt">499</span>
               </div>
               <div className="tier-regular-row">
-                <span className="tier-regular">à§³715</span>
+                <span className="tier-regular">{'৳'}715</span>
                 <span className="price-off-badge">30% OFF</span>
               </div>
             </div>
@@ -127,15 +127,15 @@ export default function Home() {
           <div className="tier-row">
             <div className="tier-info">
               <div className="tier-name">Classic Scoop</div>
-              <div className="tier-items">9â€“11 items</div>
+              <div className="tier-items">9–11 items</div>
             </div>
             <div className="tier-price">
               <div className="tier-launch">
-                <span className="price-currency">à§³</span>
+                <span className="price-currency">{'৳'}</span>
                 <span className="tier-launch-amt">799</span>
               </div>
               <div className="tier-regular-row">
-                <span className="tier-regular">à§³1140</span>
+                <span className="tier-regular">{'৳'}1140</span>
                 <span className="price-off-badge">30% OFF</span>
               </div>
             </div>
@@ -143,15 +143,15 @@ export default function Home() {
           <div className="tier-row">
             <div className="tier-info">
               <div className="tier-name">Mega Scoop</div>
-              <div className="tier-items">15â€“18 items</div>
+              <div className="tier-items">15–18 items</div>
             </div>
             <div className="tier-price">
               <div className="tier-launch">
-                <span className="price-currency">à§³</span>
+                <span className="price-currency">{'৳'}</span>
                 <span className="tier-launch-amt">1199</span>
               </div>
               <div className="tier-regular-row">
-                <span className="tier-regular">à§³1715</span>
+                <span className="tier-regular">{'৳'}1715</span>
                 <span className="price-off-badge">30% OFF</span>
               </div>
             </div>
@@ -166,23 +166,23 @@ export default function Home() {
         <Image src="/package.jpg" alt="The Package" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Mystery Â· Packages</div>
+        <div className="product-cat-tag">Mystery · Packages</div>
         <div className="product-name">The Package</div>
         <div className="product-tagline">"Curated by us. Surprising for you."</div>
-        <div className="product-desc">We curate and pack the box our way â€” sealed with taste, delivered with surprise.</div>
+        <div className="product-desc">We curate and pack the box our way — sealed with taste, delivered with surprise.</div>
         <div className="tier-list">
           <div className="tier-row">
             <div className="tier-info">
               <div className="tier-name">Small Package</div>
-              <div className="tier-items">5â€“6 items</div>
+              <div className="tier-items">5–6 items</div>
             </div>
             <div className="tier-price">
               <div className="tier-launch">
-                <span className="price-currency">à§³</span>
+                <span className="price-currency">{'৳'}</span>
                 <span className="tier-launch-amt">499</span>
               </div>
               <div className="tier-regular-row">
-                <span className="tier-regular">à§³715</span>
+                <span className="tier-regular">{'৳'}715</span>
                 <span className="price-off-badge">30% OFF</span>
               </div>
             </div>
@@ -190,15 +190,15 @@ export default function Home() {
           <div className="tier-row">
             <div className="tier-info">
               <div className="tier-name">Classic Package</div>
-              <div className="tier-items">9â€“11 items</div>
+              <div className="tier-items">9–11 items</div>
             </div>
             <div className="tier-price">
               <div className="tier-launch">
-                <span className="price-currency">à§³</span>
+                <span className="price-currency">{'৳'}</span>
                 <span className="tier-launch-amt">799</span>
               </div>
               <div className="tier-regular-row">
-                <span className="tier-regular">à§³1140</span>
+                <span className="tier-regular">{'৳'}1140</span>
                 <span className="price-off-badge">30% OFF</span>
               </div>
             </div>
@@ -206,15 +206,15 @@ export default function Home() {
           <div className="tier-row">
             <div className="tier-info">
               <div className="tier-name">Mega Package</div>
-              <div className="tier-items">15â€“18 items</div>
+              <div className="tier-items">15–18 items</div>
             </div>
             <div className="tier-price">
               <div className="tier-launch">
-                <span className="price-currency">à§³</span>
+                <span className="price-currency">{'৳'}</span>
                 <span className="tier-launch-amt">1199</span>
               </div>
               <div className="tier-regular-row">
-                <span className="tier-regular">à§³1715</span>
+                <span className="tier-regular">{'৳'}1715</span>
                 <span className="price-off-badge">30% OFF</span>
               </div>
             </div>
@@ -226,7 +226,7 @@ export default function Home() {
   </div>{/* /product-grid */}
 </section>
 
-{/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• JEWELRY â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+{/* ====================== JEWELRY ====================== */}
 <section className="catalog-section" id="jewelry">
   <div className="section-header">
     <div className="section-header-top">
@@ -239,13 +239,13 @@ export default function Home() {
     </div>
     <div className="section-meta">
       <span className="section-meta-dot"></span>
-      12 products &nbsp;Â·&nbsp; Rings, Earrings, Bracelets, Pendants
+      12 products &nbsp;·&nbsp; Rings, Earrings, Bracelets, Pendants
     </div>
   </div>
 
   <div className="product-grid">
 
-    {/* Chunky Rings â€” 2 types */}
+    {/* Chunky Rings — 2 types */}
     <div className="product-card">
       <div className="img-multi">
         <div className="variant-pill">2 types</div>
@@ -255,25 +255,25 @@ export default function Home() {
         </div>
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Jewelry Â· Rings</div>
+        <div className="product-cat-tag">Jewelry · Rings</div>
         <div className="product-name">Chunky Rings</div>
         <div className="product-tagline">"Stack 'em. Own the aesthetic."</div>
-        <div className="product-desc">Bold, oversized, unapologetically Y2K â€” these chunky rings are meant to be worn three at a time. Mix metals, mix moods. One ring for every version of you.</div>
+        <div className="product-desc">Bold, oversized, unapologetically Y2K — these chunky rings are meant to be worn three at a time. Mix metals, mix moods. One ring for every version of you.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">149</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³213</span>
+            <span className="price-regular">{'৳'}213</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
       </div>
     </div>
 
-    {/* Enamel Rings â€” 3 types */}
+    {/* Enamel Rings — 3 types */}
     <div className="product-card">
       <div className="img-multi">
         <div className="variant-pill">3 types</div>
@@ -284,18 +284,18 @@ export default function Home() {
         </div>
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Jewelry Â· Rings</div>
+        <div className="product-cat-tag">Jewelry · Rings</div>
         <div className="product-name">Enamel Rings</div>
         <div className="product-tagline">"Tiny art. Worn on your finger."</div>
         <div className="product-desc">Colourful enamel detailing on a dainty band. Cute enough for school, cool enough for wherever the night takes you. Collect one in every shade.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">169</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³241</span>
+            <span className="price-regular">{'৳'}241</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -308,18 +308,18 @@ export default function Home() {
         <Image src="/bracelet-4-pc-set.jpg" alt="Bracelet 4pc Packet" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Jewelry Â· Bracelets</div>
+        <div className="product-cat-tag">Jewelry · Bracelets</div>
         <div className="product-name">Bracelet (4pc Packet)</div>
         <div className="product-tagline">"Four bracelets. One wrist. Infinite combinations."</div>
-        <div className="product-desc">A curated set of four stackable bracelets â€” because one is never enough. Layer them together or mix with your own favourites. The perfect wrist stack starts here.</div>
+        <div className="product-desc">A curated set of four stackable bracelets — because one is never enough. Layer them together or mix with your own favourites. The perfect wrist stack starts here.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">299</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³427</span>
+            <span className="price-regular">{'৳'}427</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -332,18 +332,18 @@ export default function Home() {
         <Image src="/water-droplets-earrings.jpg" alt="Water Droplet Earrings" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Jewelry Â· Earrings</div>
+        <div className="product-cat-tag">Jewelry · Earrings</div>
         <div className="product-name">Water Droplet Earrings</div>
         <div className="product-tagline">"Light. Airy. Effortlessly you."</div>
-        <div className="product-desc">Delicate water droplet silhouettes that catch the light with every turn of your head. The kind of earrings you forget you're wearing â€” until someone asks about them.</div>
+        <div className="product-desc">Delicate water droplet silhouettes that catch the light with every turn of your head. The kind of earrings you forget you're wearing — until someone asks about them.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">149</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³213</span>
+            <span className="price-regular">{'৳'}213</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -356,18 +356,18 @@ export default function Home() {
         <Image src="/pearl-stud-earrings.jpg" alt="Pearl Stud Earrings" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Jewelry Â· Earrings</div>
+        <div className="product-cat-tag">Jewelry · Earrings</div>
         <div className="product-name">Pearl Stud Earrings</div>
         <div className="product-tagline">"Old money energy. New girl attitude."</div>
         <div className="product-desc">Classic pearl studs reimagined for Gen Z. Minimal, timeless, and just the right amount of put-together. Works with your school uniform and your going-out fit.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">199</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³284</span>
+            <span className="price-regular">{'৳'}284</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -380,18 +380,18 @@ export default function Home() {
         <Image src="/cherry-earrings.jpg" alt="Cherry Earrings" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Jewelry Â· Earrings</div>
+        <div className="product-cat-tag">Jewelry · Earrings</div>
         <div className="product-name">Cherry Earrings</div>
         <div className="product-tagline">"Sweet. Playful. Totally iconic."</div>
-        <div className="product-desc">Cherry dangles that scream summer Y2K. These tiny statement earrings are the punctuation mark your outfit was missing. Playful without trying â€” that's the vibe.</div>
+        <div className="product-desc">Cherry dangles that scream summer Y2K. These tiny statement earrings are the punctuation mark your outfit was missing. Playful without trying — that's the vibe.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">149</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³213</span>
+            <span className="price-regular">{'৳'}213</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -404,18 +404,18 @@ export default function Home() {
         <Image src="/pearl-earrings.jpg" alt="Pearl Earrings" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Jewelry Â· Earrings</div>
+        <div className="product-cat-tag">Jewelry · Earrings</div>
         <div className="product-name">Pearl Earrings</div>
         <div className="product-tagline">"Pearls, but make it interesting."</div>
-        <div className="product-desc">Not your grandmother's pearls. These have character â€” whether they dangle, cluster, or drop, they bring a quiet confidence that does all the talking for you.</div>
+        <div className="product-desc">Not your grandmother's pearls. These have character — whether they dangle, cluster, or drop, they bring a quiet confidence that does all the talking for you.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">249</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³356</span>
+            <span className="price-regular">{'৳'}356</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -428,18 +428,18 @@ export default function Home() {
         <Image src="/helix-earrings.jpg" alt="Helix Earrings" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Jewelry Â· Earrings</div>
+        <div className="product-cat-tag">Jewelry · Earrings</div>
         <div className="product-name">Helix Earrings</div>
         <div className="product-tagline">"Designed for the girl who collects earrings."</div>
         <div className="product-desc">Slim, spiral, subtly stunning. Made for stacking up the ear or wearing solo for a clean, editorial look. Minimal effort. Maximum cool.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">199</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³284</span>
+            <span className="price-regular">{'৳'}284</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -452,18 +452,18 @@ export default function Home() {
         <Image src="/moyur-earrings.jpg" alt="Moyur Earrings" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Jewelry Â· Earrings</div>
+        <div className="product-cat-tag">Jewelry · Earrings</div>
         <div className="product-name">Moyur Earrings</div>
         <div className="product-tagline">"Inspired by the peacock. Worn by you."</div>
-        <div className="product-desc">Taking the shimmering beauty of the moyur and distilling it into wearable art. Intricate details, iridescent charm â€” at every celebration and every casual Tuesday.</div>
+        <div className="product-desc">Taking the shimmering beauty of the moyur and distilling it into wearable art. Intricate details, iridescent charm — at every celebration and every casual Tuesday.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">249</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³356</span>
+            <span className="price-regular">{'৳'}356</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -476,18 +476,18 @@ export default function Home() {
         <Image src="/jhumka.jpg" alt="Jhumka" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Jewelry Â· Earrings</div>
+        <div className="product-cat-tag">Jewelry · Earrings</div>
         <div className="product-name">Jhumka</div>
         <div className="product-tagline">"Your deshi roots. Your Y2K moment."</div>
         <div className="product-desc">Bangladesh's most beloved earring gets a CURIO refresh. Traditional bell shape, contemporary finish. Wear it to Eid, to a hangout, to wherever you want to feel rooted and radiant.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">219</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³313</span>
+            <span className="price-regular">{'৳'}313</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -505,25 +505,25 @@ export default function Home() {
         </div>
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Jewelry Â· Earrings</div>
+        <div className="product-cat-tag">Jewelry · Earrings</div>
         <div className="product-name">Mini Jhumka</div>
         <div className="product-tagline">"All the culture. Half the size."</div>
-        <div className="product-desc">A petite version of the beloved jhumka â€” small enough for everyday wear, significant enough to carry a heritage. That gentle, familiar jingle, always with you.</div>
+        <div className="product-desc">A petite version of the beloved jhumka — small enough for everyday wear, significant enough to carry a heritage. That gentle, familiar jingle, always with you.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">129</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³184</span>
+            <span className="price-regular">{'৳'}184</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
       </div>
     </div>
 
-    {/* Pendants â€” 2 types */}
+    {/* Pendants — 2 types */}
     <div className="product-card">
       <div className="img-multi">
         <div className="variant-pill">2 types</div>
@@ -533,18 +533,18 @@ export default function Home() {
         </div>
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Jewelry Â· Pendants</div>
+        <div className="product-cat-tag">Jewelry · Pendants</div>
         <div className="product-name">Pendants</div>
         <div className="product-tagline">"A little mystery. Right at your heart."</div>
-        <div className="product-desc">Delicate pendant designs that sit close to the heart â€” literally. Each piece carries its own quiet story. Wear alone or layer with other necklaces for a curated, lived-in look.</div>
+        <div className="product-desc">Delicate pendant designs that sit close to the heart — literally. Each piece carries its own quiet story. Wear alone or layer with other necklaces for a curated, lived-in look.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">179</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³256</span>
+            <span className="price-regular">{'৳'}256</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -554,7 +554,7 @@ export default function Home() {
   </div>{/* /product-grid */}
 </section>
 
-{/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• HAIR & BINDIS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+{/* ====================== HAIR & BINDIS ====================== */}
 <section className="catalog-section tinted" id="hair-bindis">
   <div className="section-header">
     <div className="section-header-top">
@@ -567,7 +567,7 @@ export default function Home() {
     </div>
     <div className="section-meta">
       <span className="section-meta-dot"></span>
-      4 products &nbsp;Â·&nbsp; Bindis, Clips
+      4 products &nbsp;·&nbsp; Bindis, Clips
     </div>
   </div>
 
@@ -582,15 +582,15 @@ export default function Home() {
         <div className="product-cat-tag">Hair &amp; Bindis</div>
         <div className="product-name">Chaad Tip (Sheet)</div>
         <div className="product-tagline">"Wear the moon on your forehead."</div>
-        <div className="product-desc">A full sheet of crescent moon-shaped tips â€” the classic chaad tip, beloved for generations. For Eid, for a photoshoot, or just because you felt like it today.</div>
+        <div className="product-desc">A full sheet of crescent moon-shaped tips — the classic chaad tip, beloved for generations. For Eid, for a photoshoot, or just because you felt like it today.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">49</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³70</span>
+            <span className="price-regular">{'৳'}70</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -609,12 +609,12 @@ export default function Home() {
         <div className="product-desc">A whole sheet of gem-studded tips in assorted shapes and colours. One sheet. Endless looks. The finishing touch your beauty routine didn't know it needed.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">49</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³70</span>
+            <span className="price-regular">{'৳'}70</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -630,15 +630,15 @@ export default function Home() {
         <div className="product-cat-tag">Hair &amp; Bindis</div>
         <div className="product-name">Claw Clips</div>
         <div className="product-tagline">"Hair up. Confidence on."</div>
-        <div className="product-desc">The claw clip is back â€” and it never really left. A reliable, stylish grip for every kind of hair. Messy bun, half-up, full twist â€” this little clip does the heavy lifting.</div>
+        <div className="product-desc">The claw clip is back — and it never really left. A reliable, stylish grip for every kind of hair. Messy bun, half-up, full twist — this little clip does the heavy lifting.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">99</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³141</span>
+            <span className="price-regular">{'৳'}141</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -657,12 +657,12 @@ export default function Home() {
         <div className="product-desc">Decorative hair clips that add that extra something to any style. Scatter a few across a low bun or line them up the side for that effortlessly curated hair moment.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">79</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³113</span>
+            <span className="price-regular">{'৳'}113</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -672,7 +672,7 @@ export default function Home() {
   </div>{/* /product-grid */}
 </section>
 
-{/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• CHARACTER â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+{/* ====================== CHARACTER ====================== */}
 <section className="catalog-section" id="character">
   <div className="section-header">
     <div className="section-header-top">
@@ -685,7 +685,7 @@ export default function Home() {
     </div>
     <div className="section-meta">
       <span className="section-meta-dot"></span>
-      8 products &nbsp;Â·&nbsp; Key Rings, Charms, Bags
+      8 products &nbsp;·&nbsp; Key Rings, Charms, Bags
     </div>
   </div>
 
@@ -697,18 +697,18 @@ export default function Home() {
         <Image src="/key-ring-kuromi-png.jpg" alt="Kuromi Key Ring" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Character Â· Key Rings</div>
+        <div className="product-cat-tag">Character · Key Rings</div>
         <div className="product-name">Kuromi Key Ring</div>
         <div className="product-tagline">"Dark, cute, and kind of iconic."</div>
-        <div className="product-desc">Kuromi â€” Sanrio's rebellious bad girl â€” now dangling from your bag or keys. A little edgy, a lot adorable. For the girl who knows the rule-breaker is always the best character.</div>
+        <div className="product-desc">Kuromi — Sanrio's rebellious bad girl — now dangling from your bag or keys. A little edgy, a lot adorable. For the girl who knows the rule-breaker is always the best character.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">199</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³284</span>
+            <span className="price-regular">{'৳'}284</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -721,18 +721,18 @@ export default function Home() {
         <Image src="/key-ring-tumbler.jpg" alt="Tumbler Key Ring" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Character Â· Key Rings</div>
+        <div className="product-cat-tag">Character · Key Rings</div>
         <div className="product-name">Tumbler Key Ring</div>
         <div className="product-tagline">"For the girl who never puts down her cup."</div>
-        <div className="product-desc">A miniature tumbler charm â€” because your obsession with aesthetic drinkware deserves to come with you everywhere. Clip it on, show it off.</div>
+        <div className="product-desc">A miniature tumbler charm — because your obsession with aesthetic drinkware deserves to come with you everywhere. Clip it on, show it off.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">199</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³284</span>
+            <span className="price-regular">{'৳'}284</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -745,18 +745,18 @@ export default function Home() {
         <Image src="/key-ring-pink-bow.jpg" alt="Pink Bow Key Ring" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Character Â· Key Rings</div>
+        <div className="product-cat-tag">Character · Key Rings</div>
         <div className="product-name">Pink Bow Key Ring</div>
         <div className="product-tagline">"Coquette energy. Always."</div>
-        <div className="product-desc">A soft, pink satin bow â€” the unofficial symbol of the coquette aesthetic â€” now in key ring form. Feminine, playful, and a little flirty. Add to your bag and let the vibes speak.</div>
+        <div className="product-desc">A soft, pink satin bow — the unofficial symbol of the coquette aesthetic — now in key ring form. Feminine, playful, and a little flirty. Add to your bag and let the vibes speak.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">99</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³141</span>
+            <span className="price-regular">{'৳'}141</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -769,18 +769,18 @@ export default function Home() {
         <Image src="/key-ring-cars.jpg" alt="Car Key Ring" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Character Â· Key Rings</div>
+        <div className="product-cat-tag">Character · Key Rings</div>
         <div className="product-name">Car Key Ring</div>
         <div className="product-tagline">"For the girl who moves on her own terms."</div>
         <div className="product-desc">A sleek mini car charm that says 'I go where I want.' Whether you drive or just dream about it, this key ring is for the girl with places to be.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">129</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³184</span>
+            <span className="price-regular">{'৳'}184</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -793,18 +793,18 @@ export default function Home() {
         <Image src="/key-ring-crystal.jpg" alt="Crystal Key Ring" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Character Â· Key Rings</div>
+        <div className="product-cat-tag">Character · Key Rings</div>
         <div className="product-name">Crystal Key Ring</div>
         <div className="product-tagline">"A little mystical. A lot beautiful."</div>
-        <div className="product-desc">Faceted crystal charms in astronaut design that catch light like magic. Hang these off your bag for that effortless maximalist look â€” like you've been collecting pretty things your whole life.</div>
+        <div className="product-desc">Faceted crystal charms in astronaut design that catch light like magic. Hang these off your bag for that effortless maximalist look — like you've been collecting pretty things your whole life.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">199</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³284</span>
+            <span className="price-regular">{'৳'}284</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -817,18 +817,18 @@ export default function Home() {
         <Image src="/key-ring-hello-kitty.jpg" alt="Hello Kitty Key Ring" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Character Â· Key Rings</div>
+        <div className="product-cat-tag">Character · Key Rings</div>
         <div className="product-name">Hello Kitty Key Ring</div>
         <div className="product-tagline">"A classic. Forever."</div>
-        <div className="product-desc">Hello Kitty needs no introduction. This key ring is for the girl who grew up loving her and never stopped. Nostalgia, cuteness, and a bow â€” all in one.</div>
+        <div className="product-desc">Hello Kitty needs no introduction. This key ring is for the girl who grew up loving her and never stopped. Nostalgia, cuteness, and a bow — all in one.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">199</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³284</span>
+            <span className="price-regular">{'৳'}284</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -841,18 +841,18 @@ export default function Home() {
         <Image src="/pouch-bag.jpg" alt="Pouch Bag" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Character Â· Bags</div>
+        <div className="product-cat-tag">Character · Bags</div>
         <div className="product-name">Pouch Bag</div>
         <div className="product-tagline">"Tiny bag. Big personality."</div>
         <div className="product-desc">A character-printed pouch that's equal parts practical and adorable. Toss in your lip balm, your earphones, your secrets. Small enough to slip in your bag, cute enough to carry alone.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">249</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³356</span>
+            <span className="price-regular">{'৳'}356</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -865,18 +865,18 @@ export default function Home() {
         <Image src="/phone-charms.jpg" alt="Phone Charms" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Character Â· Charms</div>
+        <div className="product-cat-tag">Character · Charms</div>
         <div className="product-name">Phone Charms</div>
         <div className="product-tagline">"Your phone. But make it cute."</div>
         <div className="product-desc">Phone charms are back, and they're better than ever. Hang a character charm off your case and instantly transform a boring device into a personalised accessory. Y2K approved.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">229</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³327</span>
+            <span className="price-regular">{'৳'}327</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -886,7 +886,7 @@ export default function Home() {
   </div>{/* /product-grid */}
 </section>
 
-{/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• STATIONERY â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+{/* ====================== STATIONERY ====================== */}
 <section className="catalog-section tinted" id="stationery">
   <div className="section-header">
     <div className="section-header-top">
@@ -899,7 +899,7 @@ export default function Home() {
     </div>
     <div className="section-meta">
       <span className="section-meta-dot"></span>
-      12 products &nbsp;Â·&nbsp; Writing, Stickers, Lifestyle
+      12 products &nbsp;·&nbsp; Writing, Stickers, Lifestyle
     </div>
   </div>
 
@@ -911,18 +911,18 @@ export default function Home() {
         <Image src="/dollar-mechanical-pencil.jpg" alt="Dollar Pencil" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Stationery Â· Writing</div>
+        <div className="product-cat-tag">Stationery · Writing</div>
         <div className="product-name">Dollar Pencil</div>
         <div className="product-tagline">"Write rich."</div>
         <div className="product-desc">A novelty dollar-bill pencil that brings a little humour and a lot of style to your pencil case. Why settle for boring when you can write with something that makes people smile?</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">99</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³141</span>
+            <span className="price-regular">{'৳'}141</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -935,18 +935,18 @@ export default function Home() {
         <Image src="/fountain-pen.png" alt="Fountain Pen" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Stationery Â· Writing</div>
+        <div className="product-cat-tag">Stationery · Writing</div>
         <div className="product-name">Fountain Pen</div>
         <div className="product-tagline">"Old soul. New notes."</div>
-        <div className="product-desc">The weight of it in your hand, the flow of the ink â€” it makes every note feel intentional. For the girl who takes her journaling seriously.</div>
+        <div className="product-desc">The weight of it in your hand, the flow of the ink — it makes every note feel intentional. For the girl who takes her journaling seriously.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">129</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³184</span>
+            <span className="price-regular">{'৳'}184</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -959,18 +959,18 @@ export default function Home() {
         <Image src="/stationary-set.jpg" alt="Stationery Set" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Stationery Â· Sets</div>
+        <div className="product-cat-tag">Stationery · Sets</div>
         <div className="product-name">Stationery Set</div>
         <div className="product-tagline">"Everything you need. All in one."</div>
-        <div className="product-desc">A curated collection of stationery essentials â€” your study desk deserves to look as good as your Instagram feed. One set to organise, create, and make every study session feel a little more you.</div>
+        <div className="product-desc">A curated collection of stationery essentials — your study desk deserves to look as good as your Instagram feed. One set to organise, create, and make every study session feel a little more you.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">220</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³314</span>
+            <span className="price-regular">{'৳'}314</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -983,18 +983,18 @@ export default function Home() {
         <Image src="/sharpener.jpg" alt="Sharpener" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Stationery Â· Writing</div>
+        <div className="product-cat-tag">Stationery · Writing</div>
         <div className="product-name">Sharpener</div>
         <div className="product-tagline">"Sharp pencils. Sharper mind."</div>
-        <div className="product-desc">Not just a sharpener â€” it's a whole aesthetic moment. Compact, cute, and functional. The kind of thing that lives permanently in your pencil case and gets complimented every time it comes out.</div>
+        <div className="product-desc">Not just a sharpener — it's a whole aesthetic moment. Compact, cute, and functional. The kind of thing that lives permanently in your pencil case and gets complimented every time it comes out.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">99</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³141</span>
+            <span className="price-regular">{'৳'}141</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -1007,25 +1007,25 @@ export default function Home() {
         <Image src="/notebook-kuromi.jpg" alt="Kuromi Notebook" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Stationery Â· Notebooks</div>
+        <div className="product-cat-tag">Stationery · Notebooks</div>
         <div className="product-name">Kuromi Notebook</div>
         <div className="product-tagline">"Dark thoughts deserve a dark journal."</div>
-        <div className="product-desc">Kuromi on the cover, blank pages inside â€” ready for your biggest feelings and brightest ideas. Whether you're journaling, doodling, or writing lists, this notebook makes it feel like a moment.</div>
+        <div className="product-desc">Kuromi on the cover, blank pages inside — ready for your biggest feelings and brightest ideas. Whether you're journaling, doodling, or writing lists, this notebook makes it feel like a moment.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">199</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³284</span>
+            <span className="price-regular">{'৳'}284</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
       </div>
     </div>
 
-    {/* Highlighter â€” 4 types */}
+    {/* Highlighter — 4 types */}
     <div className="product-card">
       <div className="img-multi">
         <div className="variant-pill">4 types</div>
@@ -1037,18 +1037,18 @@ export default function Home() {
         </div>
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Stationery Â· Writing</div>
+        <div className="product-cat-tag">Stationery · Writing</div>
         <div className="product-name">Highlighter</div>
         <div className="product-tagline">"Highlight the important stuff."</div>
-        <div className="product-desc">A smooth, vibrant highlighter that makes your notes pop. Study sessions are better with colour â€” and this one delivers a clean, bright line every single time.</div>
+        <div className="product-desc">A smooth, vibrant highlighter that makes your notes pop. Study sessions are better with colour — and this one delivers a clean, bright line every single time.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">39</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³56</span>
+            <span className="price-regular">{'৳'}56</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -1061,18 +1061,18 @@ export default function Home() {
         <Image src="/sticker-kuromi.jpg" alt="Kuromi Stickers" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Stationery Â· Stickers</div>
+        <div className="product-cat-tag">Stationery · Stickers</div>
         <div className="product-name">Kuromi Stickers</div>
         <div className="product-tagline">"Sticker your whole world in Kuromi."</div>
         <div className="product-desc">A sheet of Kuromi stickers for your notebook, your laptop, your water bottle, your entire life. Because everything is better with a little gothic-cute energy on top.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">99</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³141</span>
+            <span className="price-regular">{'৳'}141</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -1085,18 +1085,18 @@ export default function Home() {
         <Image src="/sticker-3d.jpg" alt="3D Stickers" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Stationery Â· Stickers</div>
+        <div className="product-cat-tag">Stationery · Stickers</div>
         <div className="product-name">3D Stickers</div>
         <div className="product-tagline">"Stickers with depth. Literally."</div>
-        <div className="product-desc">Puffy, textured, three-dimensional stickers that add serious personality to anything they touch. Your planner, your diary, your best friend's birthday card â€” all deserve this treatment.</div>
+        <div className="product-desc">Puffy, textured, three-dimensional stickers that add serious personality to anything they touch. Your planner, your diary, your best friend's birthday card — all deserve this treatment.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">99</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³141</span>
+            <span className="price-regular">{'৳'}141</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -1109,18 +1109,18 @@ export default function Home() {
         <Image src="/sticker-normal.jpg" alt="Normal Stickers" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Stationery Â· Stickers</div>
+        <div className="product-cat-tag">Stationery · Stickers</div>
         <div className="product-name">Normal Stickers</div>
         <div className="product-tagline">"Stick to what you love."</div>
         <div className="product-desc">A mix of cute, aesthetic, and just-right stickers for everyday use. Decorate everything. Personalise everything. Life is too short for blank surfaces.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">65</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³93</span>
+            <span className="price-regular">{'৳'}93</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -1133,25 +1133,25 @@ export default function Home() {
         <Image src="/sticker-labubu.jpg" alt="Labubu Stickers" fill className="object-cover" />
       </div>
       <div className="product-info">
-        <div className="product-cat-tag">Stationery Â· Stickers</div>
+        <div className="product-cat-tag">Stationery · Stickers</div>
         <div className="product-name">Labubu Stickers</div>
         <div className="product-tagline">"The mischievous little one. Now in sticker form."</div>
-        <div className="product-desc">Labubu â€” the quirky, pointy-eared character everyone is obsessed with â€” now as a sticker sheet. Stick them everywhere and confuse everyone who hasn't discovered him yet.</div>
+        <div className="product-desc">Labubu — the quirky, pointy-eared character everyone is obsessed with — now as a sticker sheet. Stick them everywhere and confuse everyone who hasn't discovered him yet.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">129</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³184</span>
+            <span className="price-regular">{'৳'}184</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
       </div>
     </div>
 
-    {/* Straws per unit â€” lifestyle */}
+    {/* Straws per unit — lifestyle */}
     <div className="product-card">
       <div className="img-single">
         <div className="img-lifestyle-tag">Lifestyle</div>
@@ -1161,22 +1161,22 @@ export default function Home() {
         <div className="product-cat-tag">Lifestyle</div>
         <div className="product-name">Straws (per unit)</div>
         <div className="product-tagline">"Drink cute."</div>
-        <div className="product-desc">A single decorative reusable straw that turns any drink into an aesthetic moment. Add it to your tumbler, your cha, your juice â€” and watch the whole vibe of your drink change.</div>
+        <div className="product-desc">A single decorative reusable straw that turns any drink into an aesthetic moment. Add it to your tumbler, your cha, your juice — and watch the whole vibe of your drink change.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">40</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³57</span>
+            <span className="price-regular">{'৳'}57</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
       </div>
     </div>
 
-    {/* Straws 4pc â€” lifestyle */}
+    {/* Straws 4pc — lifestyle */}
     <div className="product-card">
       <div className="img-single">
         <div className="img-lifestyle-tag">Lifestyle</div>
@@ -1189,12 +1189,12 @@ export default function Home() {
         <div className="product-desc">A set of four decorative straws to match every drink, every day, every outfit. Keep a set at home, keep one in your bag, give one to your best friend. Drinking in style is a team sport.</div>
         <div className="product-pricing">
           <div className="price-launch-block">
-            <span className="price-currency">à§³</span>
+            <span className="price-currency">{'৳'}</span>
             <span className="price-launch-amt">120</span>
             <span className="price-launch-lbl">Launch</span>
           </div>
           <div className="price-right">
-            <span className="price-regular">à§³171</span>
+            <span className="price-regular">{'৳'}171</span>
             <span className="price-off-badge">30% OFF</span>
           </div>
         </div>
@@ -1206,17 +1206,17 @@ export default function Home() {
   {/* GIFT NOTE BANNER */}
   <div className="gift-banner" style={{marginTop: "3.5rem"}}>
     <div className="gift-banner-inner">
-      <span className="gift-banner-icon">âœ¦</span>
+      <span className="gift-banner-icon">✦</span>
       <div className="gift-banner-text">
-        <strong>Free Gift on Orders à§³400+</strong> â€” Pink Clips included automatically with every qualifying order.
-        &nbsp;&nbsp;<strong>Minimum order:</strong> à§³250 &nbsp;Â·&nbsp; <strong>All launch prices</strong> reflect a 30% introductory discount.
+        <strong>Free Gift on Orders {'৳'}400+</strong> — Pink Clips included automatically with every qualifying order.
+        &nbsp;&nbsp;<strong>Minimum order:</strong> {'৳'}250 &nbsp;·&nbsp; <strong>All launch prices</strong> reflect a 30% introductory discount.
       </div>
     </div>
   </div>
 
 </section>
 
-{/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• FOOTER â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+{/* ====================== FOOTER ====================== */}
 <footer className="catalog-footer">
   <div className="footer-ornament-row">
     <div className="footer-ornament-line"></div>
@@ -1224,7 +1224,7 @@ export default function Home() {
     <div className="footer-ornament-line"></div>
   </div>
   <div className="footer-logo-main">CURIO</div>
-  <div className="footer-bangla">à¦°à¦¹à¦¸à§à¦¯</div>
+  <div className="footer-bangla">{'রহস্য'}</div>
   <div className="footer-note">
     <span>Mystery</span>
     <span className="footer-divider"></span>
@@ -1236,15 +1236,15 @@ export default function Home() {
     <span className="footer-divider"></span>
     <span>Stationery</span>
     <br /><br />
-    All prices include a 30% launch discount Â· Minimum order à§³250<br />
-    Free Pink Clips gift-with-purchase on orders à§³400+
+    All prices include a 30% launch discount · Minimum order {'৳'}250<br />
+    Free Pink Clips gift-with-purchase on orders {'৳'}400+
   </div>
-  <div className="footer-ornament-row" style="margin-top: 2rem; margin-bottom: 0;">
+  <div className="footer-ornament-row" style={{marginTop: "2rem", marginBottom: "0"}}>
     <div className="footer-ornament-line"></div>
     <div className="footer-ornament-dot"></div>
     <div className="footer-ornament-line"></div>
   </div>
-  <div className="footer-bottom">Curated Mystery Â· Dhaka Â· 2026</div>
+  <div className="footer-bottom">Curated Mystery · Dhaka · 2026</div>
 </footer>
 
 
@@ -1277,7 +1277,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* â”€â”€â”€ COVER â”€â”€â”€ */
+/* ─── COVER ─── */
 .cover {
   background: var(--garnet);
   min-height: 100vh;
@@ -1400,7 +1400,7 @@ body {
   background: linear-gradient(to bottom, rgba(234,178,107,0.4), transparent);
 }
 
-/* â”€â”€â”€ NAV â”€â”€â”€ */
+/* ─── NAV ─── */
 .catalog-nav {
   background: var(--bark);
   position: sticky;
@@ -1467,7 +1467,7 @@ body {
   font-weight: 500;
 }
 
-/* â”€â”€â”€ SECTION â”€â”€â”€ */
+/* ─── SECTION ─── */
 .catalog-section {
   padding: 5rem 0 6rem;
 }
@@ -1523,7 +1523,7 @@ body {
   display: inline-block;
 }
 
-/* â”€â”€â”€ PRODUCT GRID â”€â”€â”€ */
+/* ─── PRODUCT GRID ─── */
 .product-grid {
   max-width: 1280px;
   margin: 0 auto;
@@ -1533,7 +1533,7 @@ body {
   gap: 1.75rem;
 }
 
-/* â”€â”€â”€ PRODUCT CARD â”€â”€â”€ */
+/* ─── PRODUCT CARD ─── */
 .product-card {
   background: var(--card-bg);
   border: 1px solid var(--bark-12);
@@ -1548,7 +1548,7 @@ body {
   box-shadow: 0 16px 48px rgba(68,35,25,0.1), 0 4px 12px rgba(110,0,0,0.08);
 }
 
-/* â”€â”€â”€ IMAGE ZONES â”€â”€â”€ */
+/* ─── IMAGE ZONES ─── */
 
 /* single 1:1 image */
 .img-single {
@@ -1668,7 +1668,7 @@ body {
   font-weight: 500;
 }
 
-/* â”€â”€â”€ PRODUCT INFO â”€â”€â”€ */
+/* ─── PRODUCT INFO ─── */
 .product-info {
   padding: 1.4rem 1.4rem 1.25rem;
   flex: 1;
@@ -1770,7 +1770,7 @@ body {
   white-space: nowrap;
 }
 
-/* â”€â”€â”€ MYSTERY TIER LIST â”€â”€â”€ */
+/* ─── MYSTERY TIER LIST ─── */
 .tier-list {
   display: flex;
   flex-direction: column;
@@ -1833,7 +1833,7 @@ body {
   line-height: 1;
 }
 
-/* â”€â”€â”€ GIFT NOTE â”€â”€â”€ */
+/* ─── GIFT NOTE ─── */
 .gift-banner {
   max-width: 1280px;
   margin: 0 auto 4rem;
@@ -1864,7 +1864,7 @@ body {
   font-weight: 500;
 }
 
-/* â”€â”€â”€ FOOTER â”€â”€â”€ */
+/* ─── FOOTER ─── */
 .catalog-footer {
   background: var(--bark);
   padding: 4rem 2rem 3rem;
@@ -1935,7 +1935,7 @@ body {
   letter-spacing: 0.08em;
 }
 
-/* â”€â”€â”€ RESPONSIVE â”€â”€â”€ */
+/* ─── RESPONSIVE ─── */
 @media (max-width: 640px) {
   .product-grid {
     grid-template-columns: 1fr 1fr;
@@ -1967,8 +1967,3 @@ body {
     </>
   );
 }
-
-
-
-
-
